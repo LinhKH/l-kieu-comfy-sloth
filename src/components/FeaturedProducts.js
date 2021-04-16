@@ -6,15 +6,15 @@ import Loading from './Loading'
 import Error from './Error'
 import Product from './Product'
 
-import { useProductsProductsProvider } from '../context/products_context'
+import { useProductsContext } from '../context/products_context'
 
 function FeaturedProducts() {
-    console.log(useProductsProductsProvider());
+    console.log(useProductsContext());
     const {
         products_loading : loading,
         products_error : error,
         featured_products : featured,
-    } = useProductsProductsProvider()
+    } = useProductsContext()
 
     if (loading) {
         return <Loading />
