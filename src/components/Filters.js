@@ -66,6 +66,7 @@ const Filters = () => {
                             name='company'
                             defaultValue=""
                             className='company'
+                            onChange={updateFilters}
                         >
                             {companies.map((c, index) => {
                                 return (
@@ -81,7 +82,7 @@ const Filters = () => {
                     <div className='form-control'>
                         <h5>colors</h5>
                         <div className='colors'>
-
+                            
                         </div>
                     </div>
                     {/* end of colors */}
