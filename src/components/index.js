@@ -11,6 +11,10 @@ import ListView from './ListView'
 import ProductList from './ProductList'
 import Filters from './Filters'
 import Sort from './Sort'
+import CartContent from './CarContent'
+import CartColumns from './CartColumns'
+import AmountButtons from './AmountButtons'
+import CartTotals from './CartTotals'
 
 export { 
     Navbar, 
@@ -26,6 +30,10 @@ export {
     ProductList,
     Filters,
     Sort,
+    CartContent,
+    CartColumns,
+    AmountButtons,
+    CartTotals,
 
 
 } 

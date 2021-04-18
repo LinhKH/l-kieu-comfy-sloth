@@ -1,35 +1,40 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import { BsFillGridFill, BsList } from 'react-icons/bs'
-import styled from 'styled-components'
+
+import {useFilterContext} from '../context/filter_context'
+
 const Sort = () => {
 
-    const grid_view = true;
-    const products = []
+    const { all_products:products,grid_view,sort,setGridView,setListView,updateSort,filtered_products } = useFilterContext()
 
     return (
         <Wrapper>
             <div className='btn-container'>
                 <button
+                    onClick={setGridView}
                     className={`${grid_view ? 'active' : null}`}
                 >
                     <BsFillGridFill />
                 </button>
                 <button
+                    onClick={setListView}
                     className={`${!grid_view ? 'active' : null}`}
                 >
                     <BsList />
                 </button>
             </div>
-            <p>{products.length} products found</p>
+            <p>{filtered_products.length} {filtered_products.length > 1 ? 'products' : 'product '} found</p>
             <hr />
             <form>
                 <label htmlFor='sort'>sort by</label>
                 <select
                     name='sort'
                     id='sort'
-                    value=""
+                    defaultValue={sort}
                     className='sort-input'
+                    onChange={updateSort}
                 >
                     <option value='price-lowest'>price (lowest)</option>
                     <option value='price-highest'>price (highest)</option>
