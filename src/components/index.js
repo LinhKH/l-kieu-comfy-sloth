@@ -1,4 +1,5 @@
 import Navbar from './Navbar'
+import Sidebar from './Sidebar'
 import PageHero from './PageHero'
 import Hero from './Hero'
 import Services from './Services'
@@ -15,9 +16,15 @@ import CartContent from './CarContent'
 import CartColumns from './CartColumns'
 import AmountButtons from './AmountButtons'
 import CartTotals from './CartTotals'
+import AddToCart from './AddToCart'
+import ProductImages from './ProductImages'
+import Stars from './Stars'
+import CartButton from './CartButtons'
+import StripeCheckout from './StripeCheckout'
 
 export { 
-    Navbar, 
+    Navbar,
+    Sidebar, 
     PageHero, 
     Hero, 
     Services, 
@@ -34,6 +41,10 @@ export {
     CartColumns,
     AmountButtons,
     CartTotals,
-
+    AddToCart,
+    ProductImages,
+    Stars,
+    CartButton,
+    StripeCheckout,
 
 } 

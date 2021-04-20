@@ -1,14 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import { useCartContext } from '../context/cart_context'
 import { Link } from 'react-router-dom'
 import { CartContent, PageHero } from '../components'
-
 const CartPage = () => {
-
-    const cart = [];
-
-    
+    const { cart } = useCartContext()
     if (cart.length < 1) {
         return (
             <Wrapper className='page-100'>

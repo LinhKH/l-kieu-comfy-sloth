@@ -20,6 +20,9 @@ const products_reducer = (state, action) => {
         case All.SIDEBAR_OPEN:
             return { ...state, isSidebarOpen: true }
 
+        case All.SIDEBAR_CLOSE:
+            return { ...state, isSidebarOpen:false}
+
         case All.GET_PRODUCTS_BEGIN:
             return { ...state, products_loading: true }
 
@@ -35,6 +38,15 @@ const products_reducer = (state, action) => {
             }
         case All.GET_PRODUCTS_ERROR:
             return { ...state, products_loading: false, products_error: true }
+
+        case All.GET_SINGLE_PRODUCT_BEGIN:
+            return { ...state, single_product_loading: true, single_product_error: false}
+
+        case All.GET_SINGLE_PRODUCT_SUCCESS:
+            return { ...state, single_product_loading: false, single_product: action.payload }
+
+        case All.GET_SINGLE_PRODUCT_ERROR:
+            return { ...state, single_product_loading: false, single_product_error: true}
 
         default:
             throw new Error(`No Matching "${action.type}" - action type`);

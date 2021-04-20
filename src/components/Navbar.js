@@ -4,9 +4,13 @@ import logo from '../assets/logo.svg'
 import { FaBars } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { links } from '../utils/constants'
+import CartButtons from './CartButtons'
+import { useProductsContext } from '../context/products_context'
+import { useUserContext } from '../context/user_context'
 
-function NavBar() {
-    const myUser = true
+const Nav = () => {
+    const { openSidebar } = useProductsContext()
+    const { myUser } = useUserContext()
     return (
         <NavContainer>
             <div className='nav-center'>
@@ -14,7 +18,7 @@ function NavBar() {
                     <Link to='/'>
                         <img src={logo} alt='comfy sloth' />
                     </Link>
-                    <button type='button' className='nav-toggle' >
+                    <button type='button' className='nav-toggle' onClick={openSidebar}>
                         <FaBars />
                     </button>
                 </div>
@@ -33,7 +37,7 @@ function NavBar() {
                         </li>
                     )}
                 </ul>
-                {/* <CartButtons /> */}
+                <CartButtons />
             </div>
         </NavContainer>
     )
@@ -105,4 +109,5 @@ const NavContainer = styled.nav`
     }
   }
 `
-export default NavBar
+
+export default Nav
